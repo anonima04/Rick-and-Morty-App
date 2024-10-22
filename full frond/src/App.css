@@ -1,0 +1,15 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.App{
+  display: grid;
+  grid-template-rows: 1fr;
+  /* grid-template-columns: 1fr 4fr; */
+  height: 100vh;
+  
+  
+}

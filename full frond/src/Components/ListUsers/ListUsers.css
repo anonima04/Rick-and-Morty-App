@@ -1,0 +1,14 @@
+#card{
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 3px 5px black;
+    
+    
+}
+#users {
+    display: flex;
+    flex-wrap: wrap;        /* Permite que las tarjetas se envuelvan a la siguiente línea */
+    justify-content: space-around; /* Distribuye las tarjetas uniformemente */
+    gap: 16px;              /* Espacio entre las tarjetas */
+    padding: 10px;          /* Espacio alrededor del contenedor */
+  }

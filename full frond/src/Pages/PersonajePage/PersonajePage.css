@@ -1,0 +1,57 @@
+#body{
+    padding-left: 200px;
+    background-color: grey
+}
+
+#personaje-div {
+    display: grid;
+    grid-template-areas: 
+        "input cart";
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    padding: 40px;
+    gap: 20px;
+}
+
+
+
+#character-div {
+    grid-area: cart;
+    padding: 20px;
+    border-radius: 20px;
+    justify-self: center;
+}
+
+#input-div {
+    grid-area: input;
+    background-color: rgb(18, 29, 32);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 300px;
+    justify-self: center;
+    align-self: center;
+}
+
+#numero {
+    width: 80%; /* Ajuste para mayor tamaño */
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px; /* Espaciado interno */
+    margin-top: 10px
+}
+
+#h1 {
+    text-shadow: 3px 1px 1px rgb(1, 1, 29);
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+}
+
+#h2 {
+    text-align: center;
+    color:white;
+    text-shadow: 3px 1px 1px rgb(1, 1, 15);
+}
