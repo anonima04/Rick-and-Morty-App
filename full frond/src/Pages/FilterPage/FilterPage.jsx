@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import CartUsers from "../../Components/CartUsers/CartUsers";
 import "./FilterPage.css";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const FilterPage = () => {
   const [users, setUsers] = useState([]);
@@ -12,11 +14,10 @@ const FilterPage = () => {
   console.log(species);
 
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character/")
-      .then((response) => response.json())
+    axios("https://rickandmortyapi.com/api/character/")
       .then((data) => {
         console.log(data);
-        setUsers(data.results);
+        setUsers(data.data.results);
       })
       .catch((error) => console.error("Error fetching data: ", error));
   }, []);
@@ -25,22 +26,24 @@ const FilterPage = () => {
     if (species) return user.species.toLowerCase() === species.toLowerCase();
     return true;
   });
-  console.log('filtro users ', filteredUsers);
+  console.log("filtro users ", filteredUsers);
 
   return (
     <div id="users">
       {filteredUsers.map((user) => (
-        <div className="card" key={user.id}>
-          <CartUsers
-            name={user.name}
-            status={user.status}
-            species={user.species}
-            gender={user.gender}
-            origin={user.origin.name}
-            location={user.location.name}
-            image={user.image}
-          />
-        </div>
+        <Link to={`/personaje/${user.id}`} key={user.id} className="card-link">
+          <div className="card" key={user.id}>
+            <CartUsers
+              name={user.name}
+              status={user.status}
+              species={user.species}
+              gender={user.gender}
+              origin={user.origin.name}
+              location={user.location.name}
+              image={user.image}
+            />
+          </div>
+        </Link>
       ))}
     </div>
   );
