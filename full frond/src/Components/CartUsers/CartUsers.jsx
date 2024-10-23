@@ -22,7 +22,7 @@ const CartUsers = (props) => {
           <Typography gutterBottom variant="h5" component="div" className="nombre-cardContend">
             {props.name}
           </Typography>
-          {/* <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          <Typography  className={`details ${props.showDetails ? 'show' : 'hide'}`} variant="body2" sx={{ color: "text.secondary" }}>
             <ul>
               <li>
                 <a>
@@ -55,7 +55,7 @@ const CartUsers = (props) => {
                 </a>
               </li>
             </ul>
-          </Typography> */}
+          </Typography>
          </CardContent>
       </CardActionArea> 
     </Card>
@@ -73,4 +73,5 @@ CartUsers.propTypes = {
   origin: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   species: PropTypes.string.isRequired,
+  showDetails: PropTypes.string.isRequired,
 };

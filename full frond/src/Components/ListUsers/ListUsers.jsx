@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import CartUsers from "../CartUsers/CartUsers";
 import "./ListUsers.css";
-import axios from 'axios';
-
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const ListUser = () => {
   const [users, setUsers] = useState([]);
@@ -16,21 +16,18 @@ const ListUser = () => {
   }, []);
   console.log(users);
 
-  
   return (
-    <div id='users'>
+    <div id="users">
       {users.map((user) => (
-        <div className="card" key={user.id}>
-          <CartUsers
-            name={user.name}
-            status={user.status}
-            species={user.species}
-            gender={user.gender}
-            origin={user.origin.name}
-            location={user.location.name}
-            image={user.image}
-          />
-        </div>
+        <Link to={`/personaje/${user.id}`} key={user.id} className="card-link">
+          <div className="card" key={user.id}>
+            <CartUsers
+              name={user.name}
+              image={user.image}
+              showDetails={false}
+            />
+          </div>
+        </Link>
       ))}
     </div>
   );

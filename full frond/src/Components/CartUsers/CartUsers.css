@@ -1,4 +1,7 @@
 .Card {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     margin: 20px;
     padding-left: -200%;
     border-radius: 20px;
@@ -11,7 +14,8 @@
 
 #imagen{
     display: flex;
-    justify-self: center;
+    justify-content: center;
+    align-content: center;
 }
 
 .nombre-cardContend{
@@ -19,6 +23,16 @@
     text-align: center;
     text-shadow: 2px 1px 1px rgb(44, 244, 9);
 }
+#details{
+    visibility: hidden;
+}
 
-
+.details.hide {
+    display: none;
+  }
+  
+  .details.show {
+    display: block;
+  }
+  
 

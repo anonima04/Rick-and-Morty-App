@@ -28,11 +28,6 @@ const Nav = () => {
             Aliens
           </Button>
         {/* </Link> */}
-        <Link to={"/personaje"}>
-          <Button sx={{ margin: 3, width: 130 }} variant="outlined">
-            Personaje
-          </Button>
-        </Link>
         <Link to={"/about"}>
           <Button sx={{ margin: 3, width: 130 }} variant="outlined">
             Acerca

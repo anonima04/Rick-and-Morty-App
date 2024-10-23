@@ -1,72 +1,39 @@
-import { useState } from "react";
-import Button from "@mui/material/Button";
+import { useState, useEffect } from "react";
 import "./PersonajePage.css";
+import { useParams } from 'react-router-dom';
 import CartUsers from "../../Components/CartUsers/CartUsers";
+import axios from "axios"
 
-const fetchCharacterById = (id, setCharacter) => {
-  fetch(`https://rickandmortyapi.com/api/character/${id}`)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      setCharacter(data);
-    })
-    .catch((error) => console.error("Error fetching data: ", error));
-};
+const PersonajePage = () => {
+  const { id } = useParams();
+  const [user, setUser] = useState(null);
 
-const Personaje = () => {
-  const [id, setId] = useState("");
-  const [character, setCharacter] = useState(null);
+  useEffect(() => {
+    axios(`https://rickandmortyapi.com/api/character/${id}`)
+      .then((response) => setUser(response.data))
+      .catch((error) => console.error('Error fetching data: ', error));
+  }, [id]);
 
-  const handleInputChange = (e) => {
-    setId(e.target.value);
-  };
-
-  const handleSearch = () => {
-    fetchCharacterById(id, setCharacter);
-  };
+  if (!user) return <div>Loading...</div>;
 
   return (
     <div id="body">
-      <div className="titulos">
-        <h1 id="h1">Busca por Id</h1>
-        <h2 id="h2">Del 1 al 826</h2>
-      </div>
-      <div id="personaje-div">
-        <div id="input-div">
-          <label>Ingresa el Id:</label>
-          <input
-            type="number"
-            id="numero"
-            min="1"
-            max="826"
-            value={id}
-            onChange={handleInputChange}
-          />
-          <Button
-            id="buscar-button"
-            onClick={handleSearch}
-            sx={{ margin: 3, width: 130 }}
-            variant="outlined"
-          >
-            Buscar
-          </Button>
-        </div>
         <div id="character-div">
-          {character && (
+          {(
             <CartUsers
-              name={character.name}
-              status={character.status}
-              species={character.species}
-              gender={character.gender}
-              origin={character.origin.name}
-              location={character.location.name}
-              image={character.image}
+              name={user.name}
+              status={user.status}
+              species={user.species}
+              gender={user.gender}
+              origin={user.origin.name}
+              location={user.location.name}
+              image={user.image}
+              showDetails={true}
             />
           )}
         </div>
       </div>
-    </div>
   );
 };
 
-export default Personaje;
+export default PersonajePage;
