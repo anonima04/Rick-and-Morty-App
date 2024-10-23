@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import CartUsers from "../CartUsers/CartUsers";
 import "./ListUsers.css";
+import axios from 'axios';
+
 
 const ListUser = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character/")
-      .then((response) => response.json())
+    axios("https://rickandmortyapi.com/api/character/")
       .then((dato) => {
-        setUsers(dato.results);
+        setUsers(dato.data.results);
       })
       .catch((error) => console.log(error));
   }, []);

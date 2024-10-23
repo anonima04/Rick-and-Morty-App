@@ -5,23 +5,24 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
 import PropTypes from "prop-types";
-import './CartUsers.css'
+import "./CartUsers.css";
 
 const CartUsers = (props) => {
   return (
-    <Card id="card" sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+    
+    <Card className="Card" sx={{ maxWidth: 345 }}>
+      <CardActionArea style={{width:"340px"}}>
         <CardMedia
+          id="imagen"
           component="img"
-        //   height="140"
           image={props.image}
-          alt="green iguana"
+          alt={props.name}
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+        <CardContent id= "content-nombre">
+          <Typography gutterBottom variant="h5" component="div" className="nombre-cardContend">
             {props.name}
           </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          {/* <Typography variant="body2" sx={{ color: "text.secondary" }}>
             <ul>
               <li>
                 <a>
@@ -54,10 +55,12 @@ const CartUsers = (props) => {
                 </a>
               </li>
             </ul>
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+          </Typography> */}
+         </CardContent>
+      </CardActionArea> 
     </Card>
+
+         
   );
 };
 export default CartUsers;

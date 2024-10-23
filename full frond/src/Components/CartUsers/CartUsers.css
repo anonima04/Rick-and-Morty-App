@@ -1,6 +1,24 @@
-
-Card{
+.Card {
     margin: 20px;
     padding-left: -200%;
-   
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease-in-out;;
 }
+
+.Card:hover {
+  box-shadow: 0 10px 40px rgba(12, 206, 240, 0.4); /* Sombra más intensa al pasar el cursor */
+}
+
+#imagen{
+    display: flex;
+    justify-self: center;
+}
+
+.nombre-cardContend{
+    font: 1em times;
+    text-align: center;
+    text-shadow: 2px 1px 1px rgb(44, 244, 9);
+}
+
+
+
