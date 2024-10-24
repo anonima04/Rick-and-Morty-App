@@ -17,7 +17,7 @@ const PersonajePage = () => {
   if (!user) return <div>Loading...</div>;
 
   return (
-    <div id="body">
+    <div id="contenedor">
         <div id="character-div">
           {(
             <CartUsers

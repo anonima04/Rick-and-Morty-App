@@ -4,12 +4,11 @@
     align-content: center;
     margin: 20px;
     padding-left: -200%;
-    border-radius: 20px;
     transition: box-shadow 0.3s ease-in-out;;
 }
 
 .Card:hover {
-  box-shadow: 0 10px 40px rgba(12, 206, 240, 0.4); /* Sombra más intensa al pasar el cursor */
+  box-shadow: 0 10px 40px rgba(0, 214, 252, 0.4); /* Sombra más intensa al pasar el cursor */
 }
 
 #imagen{

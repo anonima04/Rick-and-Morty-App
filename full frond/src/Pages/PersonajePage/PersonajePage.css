@@ -2,10 +2,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
-#body{
-    padding-left: 200px;
-    background-color: rgb(148, 146, 146);
+#contenedor{
+    padding-left: 20px;
+    padding-top: 40px;
+    min-width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* background-color: red; */
 }
 
 #personaje-div {
@@ -21,7 +27,6 @@
 #character-div {
     grid-area: cart;
     padding: 20px;
-    border-radius: 20px;
     justify-self: center;
 }
 
@@ -39,7 +44,7 @@
 }
 
 #numero {
-    width: 80%; /* Ajuste para mayor tamaño */
+    width: 80%; 
     font-size: 1.5rem;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -58,4 +63,8 @@
     text-align: center;
     color:white;
     text-shadow: 3px 1px 1px rgb(1, 1, 15);
+}
+#contenedor{
+   padding-bottom: 60px;
+    background-image: url("https://cdn.pixabay.com/photo/2023/08/14/15/42/milkyway-8190232_1280.jpg");
 }

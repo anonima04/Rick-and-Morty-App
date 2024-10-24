@@ -1,18 +1,19 @@
 // import React from 'react';
 import "./AboutPage.css";
+import "animate.css";
 
 const AboutPages = () => {
   return (
     <div id="about-div">
       <div id="enunciado">
-        <h1>Rick and Morty</h1>
+        <h1 className="animate__animated animate__bounce">Rick and Morty</h1>
         <img
-          id="imagen"
+          id="imagenRick"
           src="https://comicbook.com/wp-content/uploads/sites/4/2024/10/Rick-And-Morty.jpg"
           alt="imagen que hace referencia a Rick and Morty"
         />
       </div>
-      <div id="body">
+      <div id="descripcion">
         <div>
           La serie sigue las desventuras de un científico, Rick Sánchez, y su
           fácilmente influenciable nieto, Morty, quienes pasan el tiempo entre
